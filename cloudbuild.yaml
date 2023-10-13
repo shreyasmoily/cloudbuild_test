@@ -2,7 +2,7 @@ options:
   logging: CLOUD_LOGGING_ONLY
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'node-app-js asia-south1-docker.pkg.dev/niveus-gcp-training-1/shreyas-regisrty/node-app-js:v01', '.']
+  args: ['build', '-t', 'node-app-js', '.']
 # images: ['us-west2-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/hello-world:latest']
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['push', 'us-west2-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/hello-world:latest']
