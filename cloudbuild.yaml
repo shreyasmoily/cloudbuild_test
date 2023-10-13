@@ -15,6 +15,7 @@ steps:
     - |
       docker images
       docker ps
+      docker build -t node-app -f dockerfile .
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
