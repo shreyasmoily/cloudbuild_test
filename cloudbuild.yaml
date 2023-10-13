@@ -1,9 +1,25 @@
 options:
   logging: CLOUD_LOGGING_ONLY
-steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'node-app-js', '.']
+# steps:
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'node-app-js', '.']
 # images: ['us-west2-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/hello-world:latest']
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['push', 'us-west2-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/hello-world:latest']
 # images: ['us-west2-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/hello-world:latest']
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      docker images
+      docker ps
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      gcloud auth list
+      gcloud config list
+
