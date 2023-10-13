@@ -13,9 +13,8 @@ steps:
   args:
     - '-c'
     - |
-      docker images
-      docker ps
       docker build -t node-app -f dockerfile .
+      docker images
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
